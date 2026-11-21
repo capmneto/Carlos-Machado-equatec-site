@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equatec Hub | Sistemas de engenharia em produção</title>
+<meta name="description" content="Ecossistema de sistemas para obras, ativos, SSMA, qualidade e pessoas, desenvolvido por quem vem do campo.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#06080a">
+<link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#sistemas">Ir para os sistemas</a>
+
+<header class="top" id="top">
+  <a class="brand" href="#inicio" aria-label="Equatec Hub, início">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="currentColor"/><g fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="3.5" r="1.8"/><circle cx="20" cy="15" r="1.8"/><circle cx="4" cy="15" r="1.8"/><path d="M12 5.3v3.7M18.6 14l-4-1.8M5.4 14l4-1.8"/></g></svg>
+    <span>equatec<b>.hub</b></span>
+  </a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Principal">
+    <a href="#sistemas">Sistemas</a>
+    <a href="#resultados" data-numbers>Resultados</a>
+    <a href="#metodo">Método</a>
+    <a href="#sobre">Sobre</a>
+    <span class="nav-cta">
+      <a class="btn ghost" href="/login">Login</a>
+      <a class="btn solid" href="/cadastro">Solicitar acesso</a>
+    </span>
+  </nav>
+</header>
+
+<main id="inicio">
+  <!-- HERO ------------------------------------------------------------>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="mono tag"><span class="dot" aria-hidden="true"></span>10 sistemas em produção</p>
+      <h1>Sistemas que a engenharia de campo realmente usa.</h1>
+      <p class="lede">Construídos por quem passou mais de 12 anos em manutenção industrial, facilities e segurança. Obras, ativos, SSMA, qualidade e pessoas, cada um com base e acesso próprios, conectados por um único Hub.</p>
+      <div class="actions">
+        <a class="btn solid lg" href="#sistemas">Ver os sistemas</a>
+        <a class="btn ghost lg" href="/login">Entrar no Hub</a>
+      </div>
+    </div>
+    <div class="hero-viz">
+      <canvas id="graph" aria-hidden="true"></canvas>
+      <p class="sr-only" id="graph-desc">Diagrama animado: o Hub ao centro, conectado aos 10 sistemas.</p>
+      <ul class="viz-legend mono" aria-label="Sistemas no diagrama"></ul>
+    </div>
+  </section>
+
+  <!-- SISTEMAS -------------------------------------------------------->
+  <section class="sec systems" id="sistemas" aria-labelledby="t-sis">
+    <header class="sec-head reveal">
+      <h2 id="t-sis">Cada sistema resolve um problema que eu vivi em campo.</h2>
+      <p>Aplicações independentes, com banco e controle de acesso próprios. O Hub só organiza a jornada e leva o usuário autorizado à ferramenta certa.</p>
+    </header>
+    <div class="split reveal">
+      <ul class="mod-list" id="modlist"></ul>
+      <aside class="detail" id="detail" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <!-- RESULTADOS (só com números autorizados) ------------------------>
+  <section class="sec results" id="resultados" aria-labelledby="t-res" hidden>
+    <header class="sec-head reveal"><h2 id="t-res">Em produção, com dado real.</h2>
+      <p class="mono" id="asof"></p></header>
+    <dl class="numbers reveal" id="numbers"></dl>
+  </section>
+
+  <!-- MÉTODO ---------------------------------------------------------->
+  <section class="sec method" id="metodo" aria-labelledby="t-met">
+    <header class="sec-head reveal"><h2 id="t-met">Do diagnóstico à melhoria contínua.</h2>
+      <p>Sem pacote pronto: o processo começa pelo contexto da sua operação.</p></header>
+    <ol class="steps reveal" id="steps"></ol>
+  </section>
+
+  <!-- SOBRE ----------------------------------------------------------->
+  <section class="sec about" id="sobre" aria-labelledby="t-sob">
+    <figure class="portrait reveal">
+      <img src="assets/carlos-machado.jpg" width="640" height="640" alt="Carlos Machado, engenheiro mecânico e idealizador do ecossistema Equatec" loading="lazy">
+      <figcaption class="mono">Carlos Machado</figcaption>
+    </figure>
+    <div class="about-copy reveal">
+      <h2 id="t-sob">Conhecimento de campo virou software.</h2>
+      <p class="lede">Sou Carlos Américo Pereira Machado Neto, engenheiro mecânico e engenheiro de segurança do trabalho, com mais de 12 anos em manutenção industrial, facilities e projetos de engenharia em ambientes de alta criticidade.</p>
+      <p>Vivi o problema antes de escrever a primeira linha de código: HVAC e PMOC, gestão de ativos, segurança, qualidade, indicadores. Os sistemas do Hub nasceram de rotinas reais, e hoje combinam essa experiência com BI e inteligência artificial aplicada à gestão.</p>
+      <ol class="trail mono" aria-label="Trajetória">
+        <li><b>Campo</b> manutenção industrial, HVAC e PMOC, facilities</li>
+        <li><b>Gestão</b> ativos, segurança, qualidade, contratos</li>
+        <li><b>Dados</b> indicadores, BI, automação</li>
+        <li><b>Sistemas</b> 10 módulos em produção, IA aplicada</li>
+      </ol>
+      <p class="actions">
+        <a class="btn solid" id="wa" href="https://wa.me/5522998578981">Conversar no WhatsApp</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/carlos-machado-95917433/">LinkedIn</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- PRÓXIMOS -------------------------------------------------------->
+  <section class="sec next" id="proximos" aria-labelledby="t-prox">
+    <header class="sec-head reveal"><h2 id="t-prox">Em desenvolvimento.</h2>
+      <p>Direção do ecossistema. Entra em produção conforme priorização e maturidade de cada piloto.</p></header>
+    <ul class="roadmap reveal" id="roadmap"></ul>
+  </section>
+
+  <!-- CTA ------------------------------------------------------------->
+  <section class="cta reveal" aria-labelledby="t-cta">
+    <h2 id="t-cta">Tem um processo técnico que ainda vive em planilha?</h2>
+    <p>Entre no Hub ou peça acesso. Se quiser conversar sobre a sua operação, fale direto comigo.</p>
+    <p class="actions">
+      <a class="btn solid lg" href="/login">Entrar no Hub</a>
+      <a class="btn ghost lg" href="/cadastro">Solicitar acesso</a>
+    </p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="mono">equatec<b>.hub</b> · Engenharia, dados e tecnologia</p>
+  <nav aria-label="Rodapé"><a href="#sistemas">Sistemas</a><a href="#metodo">Método</a><a href="#sobre">Sobre</a><a href="/login">Login do Hub</a><a href="/cadastro">Solicitar acesso</a></nav>
+  <p>© 2026 Equatec Engenharia</p>
+</footer>
+
+<script src="data/modules.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

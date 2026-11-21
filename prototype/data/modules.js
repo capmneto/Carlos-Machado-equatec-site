@@ -1,0 +1,117 @@
+/* Fonte única de conteúdo do Hub. Só texto e URLs: nenhuma regra de negócio.
+   As URLs são EXATAMENTE as do site atual (nenhuma funcionalidade muda). */
+window.EQ_DATA = {
+  // Números reais de produção: só aparecem com showNumbers=true ou ?numeros=1.
+  // Valores coletados em 21/11/2026 com a conta admin. Publicar só com autorização do Carlos.
+  showNumbers: false,
+  numbersAsOf: "21/11/2026",
+  numbers: [
+    { value: 6362,   label: "RDOs emitidos",                      src: "rdo" },
+    { value: 455461, label: "horas-homem registradas em obra",    src: "rdo" },
+    { value: 952,    label: "turmas de treinamento gerenciadas",  src: "treinamentos" },
+    { value: 506,    label: "colaboradores com exames monitorados", src: "aso" }
+  ],
+
+  links: {
+    login: "/login",
+    signup: "/cadastro",
+    whatsapp: "https://wa.me/5522998578981",
+    linkedin: "https://www.linkedin.com/in/carlos-machado-95917433/"
+  },
+
+  families: {
+    obras:    "Obras e engenharia",
+    ssma:     "Segurança e saúde",
+    ativos:   "Ativos e qualidade",
+    pessoas:  "Pessoas",
+    comunid:  "Comunidade"
+  },
+
+  // status: "producao" | "gratuito"
+  modules: [
+    { id: "rdo", name: "Equatec RDO", short: "rdo", family: "obras",
+      host: "rdo.equatec-eng.com.br", url: "https://rdo.equatec-eng.com.br", cta: "Acessar módulo",
+      what: "Relatório diário de obra, do campo à gestão.",
+      problem: "RDO em papel e planilha perde horas, some com evidências e não fecha com o ponto e os contratos.",
+      does: "Relatórios diários, equipes, contratos, ponto, recursos, OSE e assinaturas no mesmo lugar, com acompanhamento operacional.",
+      tags: ["RDO e OSE", "Ponto e recursos", "3 bases independentes"], status: "producao" },
+
+    { id: "gestorrt", name: "Gestor de RT", short: "rt", family: "obras",
+      host: "gestorrt.equatec-eng.com.br", url: "https://gestorrt.equatec-eng.com.br", cta: "Acessar módulo",
+      what: "Responsabilidade técnica, CREA e ART sob controle.",
+      problem: "Prazos de ART, acervo técnico e planos de ação espalhados entre planilhas e pastas.",
+      does: "Gestão de responsabilidade técnica, CREA, ART, acervo técnico, planos de ação, cases, projetos e atividades de engenharia.",
+      tags: ["CREA e ART", "Acervo técnico", "Base independente"], status: "producao" },
+
+    { id: "gestaoobras", name: "Gestão Integrada de Obras", short: "obras", family: "obras",
+      host: "gestaoobras.equatec-eng.com.br", url: "https://gestaoobras.equatec-eng.com.br/", cta: "Acessar módulo",
+      what: "Planejamento, compras e financeiro da obra num só ambiente.",
+      problem: "Prazo, compra e custo da obra vivem em sistemas diferentes e só se encontram no fim do mês.",
+      does: "Planejamento, compras, financeiro, documentos e acompanhamento da obra em um ambiente integrado.",
+      tags: ["Planejamento e prazos", "Compras e financeiro", "Documentos"], status: "producao" },
+
+    { id: "ssma", name: "Ferramentas SSMA", short: "ssma", family: "ssma",
+      host: "ferramentas.equatec-eng.com.br", url: "https://ferramentas.equatec-eng.com.br", cta: "Acessar módulo",
+      what: "Formulários e inspeções de segurança, saúde e meio ambiente.",
+      problem: "Inspeção em papel não gera indicador, e desvio não registrado se repete.",
+      does: "Formulários digitais (PAC, Safety Tour, inspeções), auditorias, desvios, metas e relatórios, com acesso mobile.",
+      tags: ["Formulários SSMA", "Acesso mobile", "Relatórios"], status: "producao" },
+
+    { id: "aso", name: "Equatec ASO", short: "aso", family: "ssma",
+      host: "aso.equatec-eng.com.br", url: "https://aso.equatec-eng.com.br", cta: "Acessar módulo",
+      what: "Exames ocupacionais com alerta antes do vencimento.",
+      problem: "Exame vencido descoberto na auditoria, e não no mês anterior.",
+      does: "Funcionários, exames, clínicas, agendamentos, férias, alertas de vencimento e relatórios de conformidade.",
+      tags: ["Alertas de vencimento", "Agendamentos", "Relatórios"], status: "producao" },
+
+    { id: "ferramentaria", name: "SGAF Ferramentaria", short: "sgaf", family: "ativos",
+      host: "ferramentaria.equatec-eng.com.br", url: "https://ferramentaria.equatec-eng.com.br", cta: "Acessar módulo",
+      what: "Ferramentas e ativos com rastreabilidade de ponta a ponta.",
+      problem: "Ferramenta sem dono, calibração vencida e estoque que não bate.",
+      does: "Ativos, ferramentas, estoque, movimentações, manutenções e calibrações, com histórico rastreável.",
+      tags: ["Movimentações", "Calibrações", "Rastreabilidade"], status: "producao" },
+
+    { id: "rtm", name: "RTM Equatec", short: "rtm", family: "ativos",
+      host: "rtm.equatec-eng.com.br", url: "https://rtm.equatec-eng.com.br", cta: "Acessar módulo",
+      what: "Relatórios técnicos de montagem, RQS e profissionais.",
+      problem: "Registro técnico sem padrão e sem vínculo com o profissional que executou.",
+      does: "Relatórios técnicos, RTM, RQS, profissionais, instrumentos, inspeções e rastreabilidade da qualidade.",
+      tags: ["RTM e RQS", "Profissionais", "Inspeções"], status: "producao" },
+
+    { id: "qualidade", name: "Qualidade e RTM", short: "qual", family: "ativos",
+      host: "qualidade.equatec-eng.com.br", url: "https://qualidade.equatec-eng.com.br", cta: "Acessar módulo",
+      what: "Qualidade integrada: soldagem, END, documentos e RECs.",
+      problem: "Soldadores, END, consumíveis e documentos controlados em arquivos soltos.",
+      does: "Gestão da qualidade e rastreabilidade técnica: RECs, soldagem, inspeções, consumíveis, instrumentos e documentos.",
+      tags: ["Soldagem e END", "Consumíveis", "Documentos técnicos"], status: "producao" },
+
+    { id: "treinamentos", name: "Treinamentos / SGT", short: "sgt", family: "pessoas",
+      host: "treinamentos.equatec-eng.com.br", url: "https://treinamentos.equatec-eng.com.br", cta: "Acessar módulo",
+      what: "Treinamentos, turmas, provas e certificados.",
+      problem: "Certificado vencido e turma sem lista de presença confiável.",
+      does: "Treinamentos, turmas, grades curriculares, avaliações, certificados e progresso profissional.",
+      tags: ["Turmas e provas", "Certificação", "Base independente"], status: "producao" },
+
+    { id: "convite", name: "Equatec Convites", short: "conv", family: "comunid",
+      host: "convite.equatec-eng.com.br", url: "https://convite.equatec-eng.com.br/plataforma.php", cta: "Solicitar cadastro gratuito",
+      what: "Convites com confirmação de presença e lista em PDF.",
+      problem: "Confirmar presença por mensagem e contar na mão.",
+      does: "Crie convites com seu flyer, acompanhe confirmações e visitas e baixe a lista de presença em PDF. Cadastro gratuito, sujeito à aprovação.",
+      tags: ["Uso gratuito", "Eventos por organizador", "Cadastro com aprovação"], status: "gratuito" }
+  ],
+
+  // Roadmap enxuto: só o que é direção real, sem prometer produto pronto.
+  roadmap: [
+    { name: "Document AI", text: "Leitura e organização de contratos, memoriais, planilhas e evidências." },
+    { name: "PMOC AI", text: "Plano de manutenção, operação e controle com equipamentos, cronograma e evidências." },
+    { name: "Agentes especialistas", text: "Copilotos internos com memória técnica para rotinas de engenharia e gestão." }
+  ],
+
+  method: [
+    { t: "Diagnóstico", d: "Contexto, desafios, dados existentes e objetivos antes de propor a solução." },
+    { t: "Mapeamento", d: "Fluxos, responsabilidades, sistemas e pontos críticos do ambiente." },
+    { t: "Planejamento", d: "Escopo, entregáveis, indicadores de sucesso e governança da implantação." },
+    { t: "Implementação", d: "Execução com rigor técnico, validações progressivas e entregas controladas." },
+    { t: "Evolução", d: "Monitoramento de resultados e melhoria contínua da operação." }
+  ]
+};
