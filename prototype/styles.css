@@ -18,7 +18,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-wrap:pretty}
-img,canvas{display:block;max-width:100%}
+img,canvas{display:block;max-width:100%}img{height:auto}
 a{color:inherit}
 h1,h2{font-weight:600;letter-spacing:-.02em;line-height:1.08;text-wrap:balance;margin:0}
 h1{font-size:clamp(2.3rem,5.4vw,4.4rem)}

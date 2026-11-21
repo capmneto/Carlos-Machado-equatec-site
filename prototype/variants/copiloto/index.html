@@ -9,7 +9,7 @@
 </head>
 <body>
 <header class="top"><a class="brand mono" href="#inicio">equatec<b>.hub</b></a>
-  <nav><a href="#sistemas">Sistemas</a><a href="#proximos">Próximos módulos</a><a href="#sobre">Sobre</a></nav>
+  <nav><a href="#canteiro">Canteiro</a><a href="#sistemas">Sistemas</a><a href="#proximos">Próximos módulos</a><a href="#sobre">Sobre</a></nav>
   <span class="cta"><a class="btn" href="/login">Login</a><a class="btn solid" href="/cadastro">Solicitar acesso</a></span></header>
 <main id="inicio">
   <section class="hero">
@@ -23,8 +23,25 @@
       <button class="go" aria-label="Perguntar">→</button>
     </form>
     <ul class="chips" id="chips" aria-label="Sugestões"></ul>
+    <a class="spot" href="#canteiro"><b>Destaque</b> Canteiro, a gestão de obras do ecossistema <span aria-hidden="true">↓</span></a>
     <div class="answer" id="answer" aria-live="polite"></div>
     <p class="note mono">Busca guiada pelo conteúdo do Hub. Nada que você digita é enviado a serviço externo.</p>
+  </section>
+
+  <section class="sec feat" id="canteiro" aria-labelledby="tf">
+    <div class="feat-copy reveal">
+      <p class="mono tagline">Destaque · gestão de obras</p>
+      <h2 id="tf">Canteiro: a obra inteira num só lugar.</h2>
+      <p class="lede">Do planejamento ao financeiro, a obra acompanhada contra o que foi planejado, com acesso por obra e por usuário.</p>
+      <ul class="points" id="fpoints"></ul>
+      <p class="row"><a class="btn solid lg" id="fgo" href="https://canteiro.equatec-eng.com.br/">Acessar o Canteiro →</a><a class="btn lg" href="https://wa.me/5522998578981">Falar com o Carlos</a></p>
+    </div>
+    <div class="feat-viz reveal">
+      <div class="tabs mono" role="tablist" id="ftabs" aria-label="Áreas do Canteiro"></div>
+      <div class="panel" id="fpanel" role="tabpanel"></div>
+      <figure class="shot" id="fshot" hidden><img id="fimg" alt="Tela do Canteiro" width="1280" height="800"><figcaption class="mono">tela real do Canteiro</figcaption></figure>
+      <p class="fnote mono" id="fnote">Ilustração do conceito. Os valores são exemplos, não dados reais.</p>
+    </div>
   </section>
 
   <section class="sec" id="sistemas" aria-labelledby="t1">
@@ -38,14 +55,20 @@
   </section>
 
   <section class="sec" id="sobre" aria-labelledby="t3">
-    <h2 class="sr-only" id="t3">Sobre o idealizador</h2>
-    <div class="chat">
-      <p class="bubble q mono">Quem está por trás do Hub?</p>
-      <div class="bubble a"><img src="../../assets/carlos-machado.jpg" width="640" height="640" alt="Carlos Machado, engenheiro mecânico e idealizador do ecossistema Equatec" loading="lazy">
-        <div><p class="lede">Carlos Américo Pereira Machado Neto, engenheiro mecânico e engenheiro de segurança do trabalho, com mais de 12 anos em manutenção industrial, facilities e projetos de engenharia em ambientes de alta criticidade.</p>
-        <p>HVAC e PMOC, gestão de ativos, segurança, qualidade, indicadores, BI e IA aplicada à gestão. Os sistemas nasceram de rotinas que eu mesmo vivi em campo.</p>
-        <p class="row"><a class="btn solid" href="https://wa.me/5522998578981">Conversar no WhatsApp</a><a class="btn" href="https://www.linkedin.com/in/carlos-machado-95917433/">LinkedIn</a></p></div></div>
-    </div>
+    <p class="bubble q mono reveal">Quem está por trás do Hub?</p>
+    <article class="profile reveal">
+      <figure class="ph"><img src="../../assets/carlos-machado.jpg" width="640" height="640" alt="Carlos Machado, engenheiro mecânico e idealizador do ecossistema Equatec" loading="lazy"></figure>
+      <div class="pf">
+        <h2 id="t3">Carlos Machado</h2>
+        <p class="role">Engenheiro mecânico e engenheiro de segurança do trabalho</p>
+        <p class="lede">Mais de 12 anos em manutenção industrial, facilities e projetos de engenharia em ambientes de alta criticidade.</p>
+        <p>HVAC e PMOC, gestão de ativos, segurança, qualidade, indicadores, BI e inteligência artificial aplicada à gestão. Os sistemas do Hub nasceram de rotinas que eu mesmo vivi em campo.</p>
+        <blockquote>Transformamos dados, processos e documentação técnica em ferramentas de gestão estratégica.</blockquote>
+        <ul class="creds mono"><li>Engenharia mecânica</li><li>Segurança do trabalho</li><li>Manutenção e facilities</li><li>BI e IA aplicada</li></ul>
+        <dl class="facts"><div><dt>em campo</dt><dd>12+ anos</dd></div><div><dt>em produção</dt><dd>10 sistemas</dd></div><div><dt>a caminho</dt><dd>5 módulos</dd></div></dl>
+        <p class="row"><a class="btn solid" href="https://wa.me/5522998578981">Conversar no WhatsApp</a><a class="btn" href="https://www.linkedin.com/in/carlos-machado-95917433/">LinkedIn</a></p>
+      </div>
+    </article>
   </section>
   <section class="sec final"><h2>Pronto para sair da planilha?</h2><p class="row"><a class="btn solid lg" href="/login">Entrar no Hub</a><a class="btn lg" href="/cadastro">Solicitar acesso</a></p></section>
 </main>

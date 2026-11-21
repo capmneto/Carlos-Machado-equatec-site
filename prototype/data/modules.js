@@ -7,6 +7,20 @@ window.EQ_DATA = {
   numbersAsOf: "",
   numbers: [],
 
+  // Destaque do Canteiro. Pontos baseados nas descrições já publicadas dos módulos de obras; Carlos confirma o escopo atual.
+  featured: {
+    id: "canteiro",
+    url: "https://canteiro.equatec-eng.com.br/",
+    points: [
+      "Controle físico-financeiro por obra",
+      "EAP, cronograma e acompanhamento de prazos",
+      "Compras e financeiro no mesmo ambiente",
+      "Custos e progresso medidos contra o planejado",
+      "Documentos e relatórios da obra organizados",
+      "Permissão por obra e por usuário"
+    ]
+  },
+
   links: {
     login: "/login",
     signup: "/cadastro",
