@@ -2,19 +2,25 @@
 (() => {
   "use strict";
   const D = window.EQ_DATA;
+  if (!D || !Array.isArray(D.modules)) { document.documentElement.classList.remove("js"); return; }  // sem dados: mostra o HTML estático
+  D.modules.forEach(m => { m.tags = m.tags || []; });
+  D.numbers = D.numbers || [];
   const $ = (s, r = document) => r.querySelector(s);
   const el = (tag, props = {}, kids = []) => {
-    const n = Object.assign(document.createElement(tag), props);
+    const { dataset, ...rest } = props;
+    const n = Object.assign(document.createElement(tag), rest);
+    if (dataset) Object.assign(n.dataset, dataset);
     [].concat(kids).forEach(k => n.append(k));
     return n;
   };
   const reduce = matchMedia("(prefers-reduced-motion: reduce)");
   const fmt = n => n.toLocaleString("pt-BR");
-  const params = new URLSearchParams(location.search);
-  const showNumbers = D.showNumbers || params.get("numeros") === "1";
+  const showNumbers = D.showNumbers === true && D.numbers.length > 0;   // números só entram quando o dono publicar em modules.js
 
   /* ---------- lista de sistemas + painel de detalhe ---------- */
   const list = $("#modlist"), detail = $("#detail");
+  const holder = el("li", { className: "detail-holder" });
+  const lis = () => list.querySelectorAll(":scope > li:not(.detail-holder)");
   let active = 0;
 
   D.modules.forEach((m, i) => {
@@ -47,7 +53,7 @@
 
   function select(i, scroll) {
     active = i;
-    [...list.children].forEach((li, j) => j === i ? li.firstChild.setAttribute("aria-current", "true") : li.firstChild.removeAttribute("aria-current"));
+    lis().forEach((li, j) => j === i ? li.firstChild.setAttribute("aria-current", "true") : li.firstChild.removeAttribute("aria-current"));
     renderDetail(D.modules[i]);
     placeDetail();
     graph && graph.focus(i);
@@ -57,8 +63,8 @@
   const wide = matchMedia("(min-width: 961px)");
   function placeDetail() {   // no mobile, o painel abre logo abaixo do item ativo
     const split = $(".split");
-    if (wide.matches) { if (detail.parentNode !== split) split.append(detail); return; }
-    list.children[active].after(detail);
+    if (wide.matches) { holder.remove(); if (detail.parentNode !== split) split.append(detail); return; }
+    lis()[active].after(holder); holder.append(detail);
   }
   wide.addEventListener("change", placeDetail);
 
@@ -72,7 +78,7 @@
     $("#resultados").hidden = false;
     $("#asof").textContent = "dados de produção em " + D.numbersAsOf;
     D.numbers.forEach(n => $("#numbers").append(el("div", {}, [
-      el("dt", { textContent: n.label }), el("dd", { textContent: fmt(n.value), "data-to": n.value })
+      el("dt", { textContent: n.label }), el("dd", { textContent: fmt(n.value), dataset: { to: String(n.value) } })
     ])));
   } else {
     document.querySelectorAll("[data-numbers]").forEach(a => a.remove());
@@ -121,7 +127,8 @@
   addEventListener("scroll", stepProgress, { passive: true }); stepProgress();
 
   /* ---------- diagrama vivo (canvas) ---------- */
-  const graph = makeGraph($("#graph"));
+  let graph = null;
+  try { graph = makeGraph($("#graph")); } catch (e) { console.warn("diagrama indisponível", e); }
 
   function makeGraph(canvas) {
     const ctx = canvas.getContext("2d");
@@ -223,7 +230,7 @@
     });
 
     return {
-      focus(i) { focusIdx = i; const k = nodes.findIndex(n => n.idx === i); if (k >= 0) { const e = edges.findIndex(([a, b]) => a < 0 && b === k); for (let j = 0; j < 3; j++) pulses.push({ e, t: -j * .22, v: .012, rev: false }); } if (!running) draw(performance.now()); }
+      focus(i) { focusIdx = i; const k = nodes.findIndex(n => n.idx === i); if (k >= 0) { const e = edges.findIndex(([a, b]) => a < 0 && b === k); if (running && pulses.length < 40) for (let j = 0; j < 3; j++) pulses.push({ e, t: -j * .22, v: .012, rev: false }); } if (!running) { nodes.forEach(n => { n.glow = n.idx === i ? 1 : 0; }); draw(performance.now()); } }
     };
   }
 

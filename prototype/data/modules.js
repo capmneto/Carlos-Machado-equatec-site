@@ -1,16 +1,11 @@
 /* Fonte única de conteúdo do Hub. Só texto e URLs: nenhuma regra de negócio.
    As URLs são EXATAMENTE as do site atual (nenhuma funcionalidade muda). */
 window.EQ_DATA = {
-  // Números reais de produção: só aparecem com showNumbers=true ou ?numeros=1.
-  // Valores coletados em 21/11/2026 com a conta admin. Publicar só com autorização do Carlos.
+  // Números reais de produção: para publicar, o dono autoriza e preenche (showNumbers:true).
+  // O valor de teste fica em data/numbers.local.js, que NÃO vai para produção.
   showNumbers: false,
-  numbersAsOf: "21/11/2026",
-  numbers: [
-    { value: 6362,   label: "RDOs emitidos",                      src: "rdo" },
-    { value: 455461, label: "horas-homem registradas em obra",    src: "rdo" },
-    { value: 952,    label: "turmas de treinamento gerenciadas",  src: "treinamentos" },
-    { value: 506,    label: "colaboradores com exames monitorados", src: "aso" }
-  ],
+  numbersAsOf: "",
+  numbers: [],
 
   links: {
     login: "/login",

@@ -29,12 +29,19 @@ Ficam 10: RDO, Gestor de RT, Gestão Integrada de Obras, Ferramentas SSMA, ASO, 
 - Tipografia: Space Grotesk (texto/títulos) + JetBrains Mono (dados/hosts), auto-hospedadas (woff2), sem CDN.
 - Hero: diagrama em canvas, Hub ao centro e 10 nós por família, pulsos de dados, reage ao mouse e ao item selecionado na lista. Pausa fora da tela/aba oculta; estático com `prefers-reduced-motion`.
 - Sistemas: lista numerada + painel de detalhe (desktop) / acordeão inline (mobile).
-- Números reais **desligados por padrão** (`showNumbers:false`; prévia com `?numeros=1`). Só publicar com autorização.
+- Números reais **fora do bundle público**: `modules.js` tem `numbers: []` e `showNumbers:false`. O valor de teste fica em `data/numbers.local.js` (ignorado pelo git e só carregado em localhost com `?numeros=1`). Para publicar: o Carlos autoriza e os valores são movidos para `modules.js`.
 - Roadmap reduzido a 3 itens (Document AI, PMOC AI, Agentes), rotulado "em desenvolvimento".
 - Seção "Sobre": só fatos já públicos no site atual; trajetória por competências (sem inventar empresas). **Pendente: Carlos completar** credenciais (CREA, formação) e cases.
 
 ## Deixado ao implementador
 Portar para o stack real do Hub (provavelmente Next.js/Tailwind), mantendo os arquivos de conteúdo em um único módulo de dados, SSR da estrutura e canvas só no cliente.
+
+## Notas de portagem (revisão independente)
+- Dados como módulo ES (não `window.EQ_DATA`); sem `window/document/matchMedia` no topo do módulo (SSR).
+- Canvas em componente `"use client"` com `useEffect` que devolve `destroy()` (ResizeObserver, IntersectionObserver, listeners, rAF). Funciona com StrictMode.
+- Painel de detalhe renderizado por estado + breakpoint em React, **sem mover nós do DOM** como faz o protótipo (`placeDetail`).
+- Não ler `?numeros` no servidor (erro de hidratação).
+- Contraste: `--faint` ajustado para ≥4,5:1; sem `aria-live` no painel.
 
 ## Riscos
 Divergência entre protótipo e stack real (mitigado: recon antes); números sensíveis (flag desligada); desempenho do canvas em celular fraco (DPR ≤ 2, pausa fora da tela).

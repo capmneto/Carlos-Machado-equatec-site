@@ -6,7 +6,7 @@
 :root{
   --bg:#06080a; --surface:#0b0f11; --raise:#10161a;
   --line:#1a2328; --line-2:#26323a;
-  --ink:#e8eeea; --mute:#8d9992; --faint:#5d6a64;
+  --ink:#e8eeea; --mute:#8d9992; --faint:#7f8c86;
   --accent:#5cffa0;            /* trocar só aqui para testar outra cor */
   --accent-ink:#04120a;
   --sans:"Space Grotesk",ui-sans-serif,system-ui,sans-serif;
@@ -136,8 +136,10 @@ p{margin:0 0 1em}
 .foot p{margin:0}
 
 /* reveal */
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.reveal.in,.no-js .reveal{opacity:1;transform:none}
+.reveal{transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal{opacity:0;transform:translateY(14px)}
+.js .reveal.in{opacity:1;transform:none}
+.detail-holder{list-style:none}.detail-holder .detail{margin:8px 0 14px}
 
 /* responsivo */
 @media (max-width:960px){
@@ -162,5 +164,5 @@ p{margin:0 0 1em}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
+  .js .reveal{opacity:1;transform:none}
 }

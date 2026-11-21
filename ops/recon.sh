@@ -14,15 +14,17 @@ fi
 cd "$HUB_DIR" || exit 1
 echo "== pasta: $(pwd)"; echo "== git:"; git rev-parse --short HEAD 2>&1 | head -1; git status --short 2>/dev/null | head -20
 echo "== package.json (scripts/deps principais):"
-node -e 'const p=require("./package.json");console.log(JSON.stringify({name:p.name,scripts:p.scripts,deps:p.dependencies},null,1))'
+node -e 'const p=require("./package.json");console.log(JSON.stringify({name:p.name,scripts:Object.keys(p.scripts||{}),deps:Object.keys(p.dependencies||{})},null,1))'
 echo "== estrutura (3 níveis, sem node_modules/.next):"
 find . -maxdepth 3 -not -path './node_modules*' -not -path './.next*' -not -path './.git/*' | sort | head -120
 echo "== arquivos da home e layout:"
 ls -la app/page.* app/layout.* src/app/page.* src/app/layout.* 2>/dev/null
 echo "== estilos globais:"; ls -la app/globals.* src/app/globals.* tailwind.config.* postcss.config.* 2>/dev/null
 echo "== NOMES das variáveis de ambiente (sem valores):"
-for f in .env .env.local .env.production; do [ -f "$f" ] && { echo "-- $f"; sed -E 's/=.*/=<oculto>/' "$f" | grep -v '^#' | head -40; }; done
+for f in .env .env.local .env.production; do [ -f "$f" ] && { echo "-- $f (só nomes)"; sed -nE 's/^[[:space:]]*(export[[:space:]]+)?([A-Za-z_][A-Za-z0-9_]*)=.*/\2/p' "$f" | head -60; }; done
 echo "== processos / proxy:"
 command -v pm2 >/dev/null && pm2 jlist 2>/dev/null | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{JSON.parse(s).forEach(p=>console.log(p.name,p.pm2_env.status,p.pm2_env.pm_cwd))}catch(e){}})'
 systemctl list-units --type=service 2>/dev/null | grep -iE 'hub|next|node' | head
 grep -rl "hub.equatec-eng.com.br" /etc/nginx /etc/caddy /etc/apache2 2>/dev/null | head
+echo "== diretórios/arquivos GRAVÁVEIS pelo app (risco no rollback):"
+find . -maxdepth 4 \( -name '*.db' -o -name '*.sqlite*' -o -name 'uploads' -o -name 'data' -o -name '*.json' -path './storage/*' \) -not -path './node_modules/*' -not -path './.next/*' 2>/dev/null | head -30

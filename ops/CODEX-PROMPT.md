@@ -12,6 +12,9 @@ Contexto: vamos substituir **somente o layout** da página inicial pública do E
 - Trabalhe em uma **branch nova** do repositório do Hub (`redesign-home`), nunca direto na principal.
 - Alvo: apenas a home pública (`app/page.*` ou equivalente), seus componentes e estilos globais. **Não toque** em `/login`, `/cadastro`, middleware, API routes, `.env`, banco.
 - Converta `prototype/index.html` + `data/modules.js` em componentes, mantendo o conteúdo no módulo de dados. O canvas roda só no cliente. Fontes: copie `prototype/assets/fonts/` para `public/` (sem CDN).
+- Siga as "Notas de portagem" do documento de design (SSR, canvas com cleanup, sem mover DOM em React).
+- Pare o processo do app antes de qualquer rollback (`pm2 stop <app>`); dados gravados dentro da pasta depois do backup ficam só em `<pasta>.falhou-<data>`.
+- Rode backup/rollback com o MESMO usuário (o backup guarda o usuário em META.txt).
 - Rode `python3 ops/verify-links.py` (adaptando o caminho) e confirme que **todas** as URLs/rotas continuam as mesmas.
 - `npm run build` deve passar sem erro novo. Rode os testes existentes, se houver.
 

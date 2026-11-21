@@ -8,6 +8,7 @@
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#06080a">
 <link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add("js")</script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -45,7 +46,6 @@
     </div>
     <div class="hero-viz">
       <canvas id="graph" aria-hidden="true"></canvas>
-      <p class="sr-only" id="graph-desc">Diagrama animado: o Hub ao centro, conectado aos 10 sistemas.</p>
       <ul class="viz-legend mono" aria-label="Sistemas no diagrama"></ul>
     </div>
   </section>
@@ -58,7 +58,7 @@
     </header>
     <div class="split reveal">
       <ul class="mod-list" id="modlist"></ul>
-      <aside class="detail" id="detail" aria-live="polite"></aside>
+      <aside class="detail" id="detail" aria-label="Detalhes do sistema selecionado"></aside>
     </div>
   </section>
 
@@ -124,6 +124,8 @@
 </footer>
 
 <script src="data/modules.js"></script>
+<script>/* prévia local dos números reais: só em localhost com ?numeros=1; não existe em produção */
+if (["localhost","127.0.0.1"].includes(location.hostname) && /[?&]numeros=1/.test(location.search)) document.write('<script src="data/numbers.local.js"><\/script>');</script>
 <script src="app.js"></script>
 </body>
 </html>
