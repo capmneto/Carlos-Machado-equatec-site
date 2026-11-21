@@ -15,8 +15,8 @@ O Hub público parece uma landing page genérica gerada por IA e não transmite 
 
 ## Escopo (decisões do Carlos)
 Saem do Hub público: EAP Contratos, SIGT, Obras, FACILMART, Mind Map AI.
-Ficam 10: RDO, Gestor de RT, Gestão Integrada de Obras, Ferramentas SSMA, ASO, SGAF, RTM, Qualidade e RTM, Treinamentos/SGT, Convites.
-*Minha suposição:* "Obras" = `obras.equatec-eng.com.br`; `gestaoobras.` permanece. Para inverter, mudar `data/modules.js`.
+Ficam 10: RDO, Gestor de RT, Canteiro (obras), Ferramentas SSMA, ASO, SGAF, RTM, Qualidade e RTM, Treinamentos/SGT, Convites.
+**Obras:** o card de obras passa a apontar para `https://canteiro.equatec-eng.com.br/` (decisão do Carlos), substituindo `gestaoobras.`. **O layout do Canteiro não muda.** Só a correção de botões que falham no celular, a investigar com o código-fonte (fora do escopo do redesenho do Hub).
 
 ## Abordagens consideradas
 1. **Refino de tema** (paleta/tipografia, mesma estrutura): baixo risco, mas segue "catálogo de cards".

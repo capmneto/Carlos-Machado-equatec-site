@@ -38,11 +38,11 @@ window.EQ_DATA = {
       does: "Gestão de responsabilidade técnica, CREA, ART, acervo técnico, planos de ação, cases, projetos e atividades de engenharia.",
       tags: ["CREA e ART", "Acervo técnico", "Base independente"], status: "producao" },
 
-    { id: "gestaoobras", name: "Gestão Integrada de Obras", short: "obras", family: "obras",
-      host: "gestaoobras.equatec-eng.com.br", url: "https://gestaoobras.equatec-eng.com.br/", cta: "Acessar módulo",
-      what: "Planejamento, compras e financeiro da obra num só ambiente.",
+    { id: "canteiro", name: "Canteiro Equatec", short: "obras", family: "obras",
+      host: "canteiro.equatec-eng.com.br", url: "https://canteiro.equatec-eng.com.br/", cta: "Acessar módulo",
+      what: "Gestão de obras no canteiro: planejamento, compras e financeiro.",
       problem: "Prazo, compra e custo da obra vivem em sistemas diferentes e só se encontram no fim do mês.",
-      does: "Planejamento, compras, financeiro, documentos e acompanhamento da obra em um ambiente integrado.",
+      does: "Planejamento, compras, financeiro, documentos e acompanhamento da obra em um ambiente integrado. (Descrição provisória: Carlos confirma o escopo atual do Canteiro.)",
       tags: ["Planejamento e prazos", "Compras e financeiro", "Documentos"], status: "producao" },
 
     { id: "ssma", name: "Ferramentas SSMA", short: "ssma", family: "ssma",
