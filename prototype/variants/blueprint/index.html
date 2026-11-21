@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equatec Hub · Planta</title>
+<meta name="color-scheme" content="dark"><meta name="theme-color" content="#07101d">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="xhair" id="xh" aria-hidden="true"><i></i><i></i><span class="mono" id="xy">X 000 · Y 000</span></div>
+<header class="top">
+  <a class="brand mono" href="#inicio">EQUATEC<b>/HUB</b></a>
+  <nav class="mono"><a href="#sistemas">Lista de sistemas</a><a href="#proximos">Revisões planejadas</a><a href="#sobre">Responsável</a></nav>
+  <span class="cta"><a class="btn" href="/login">Login</a><a class="btn solid" href="/cadastro">Solicitar acesso</a></span>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="copy">
+      <p class="mono tag">FOLHA 01/05 · REV. A · ESCALA 1:1 EM PRODUÇÃO</p>
+      <h1>A planta digital da sua operação, projetada por quem vem do campo.</h1>
+      <p class="lede">Dez sistemas em produção cobrindo obras, segurança, ativos, qualidade e pessoas. Passe o cursor na planta: cada marcador é um sistema real.</p>
+      <p class="row"><a class="btn solid lg" href="#sistemas">Ver lista de sistemas</a><a class="btn lg" href="/login">Entrar no Hub</a></p>
+    </div>
+    <figure class="plant">
+      <svg id="plant" viewBox="0 0 800 560" role="img" aria-label="Planta industrial esquemática com 10 marcadores numerados, um para cada sistema do Hub"></svg>
+      <figcaption class="titleblock mono" id="tb"></figcaption>
+    </figure>
+  </section>
+
+  <section class="sec" id="sistemas" aria-labelledby="t1">
+    <header class="head"><p class="mono tag">FOLHA 02/05</p><h2 id="t1">Lista de materiais: os 10 sistemas.</h2></header>
+    <table class="bom"><caption class="sr-only">Lista de sistemas em produção</caption>
+      <thead class="mono"><tr><th>Item</th><th>Sistema</th><th>Família</th><th>Resolve</th><th></th></tr></thead><tbody id="bom"></tbody></table>
+  </section>
+
+  <section class="sec" id="proximos" aria-labelledby="t2">
+    <header class="head"><p class="mono tag">FOLHA 03/05</p><h2 id="t2">Próximos módulos: revisões planejadas.</h2></header>
+    <ol class="revs" id="revs"></ol>
+  </section>
+
+  <section class="sec about" id="sobre" aria-labelledby="t3">
+    <figure><img src="../../assets/carlos-machado.jpg" width="640" height="640" alt="Carlos Machado, engenheiro mecânico e idealizador do ecossistema Equatec" loading="lazy"><figcaption class="mono">RESP. TÉCNICO · CARLOS MACHADO</figcaption></figure>
+    <div><p class="mono tag">FOLHA 04/05</p><h2 id="t3">Projetado e assinado por engenheiro.</h2>
+      <p class="lede">Carlos Américo Pereira Machado Neto, engenheiro mecânico e engenheiro de segurança do trabalho, com mais de 12 anos em manutenção industrial, facilities e projetos de engenharia em ambientes de alta criticidade.</p>
+      <p>HVAC e PMOC, gestão de ativos, segurança, qualidade, indicadores, BI e IA aplicada à gestão. Cada sistema do Hub nasceu de uma rotina de campo que eu mesmo vivi.</p>
+      <p class="row"><a class="btn solid" href="https://wa.me/5522998578981">Conversar no WhatsApp</a><a class="btn" href="https://www.linkedin.com/in/carlos-machado-95917433/">LinkedIn</a></p></div>
+  </section>
+  <section class="sec final"><p class="mono tag">FOLHA 05/05</p><h2>Aprovado para uso. Entre no Hub.</h2><p class="row"><a class="btn solid lg" href="/login">Entrar no Hub</a><a class="btn lg" href="/cadastro">Solicitar acesso</a></p></section>
+</main>
+<footer class="foot mono">EQUATEC/HUB · © 2026 EQUATEC ENGENHARIA</footer>
+<script src="../../data/modules.js"></script><script src="../common.js"></script><script src="app.js"></script>
+</body></html>

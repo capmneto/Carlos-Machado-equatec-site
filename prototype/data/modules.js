@@ -95,11 +95,23 @@ window.EQ_DATA = {
       tags: ["Uso gratuito", "Eventos por organizador", "Cadastro com aprovação"], status: "gratuito" }
   ],
 
-  // Roadmap enxuto: só o que é direção real, sem prometer produto pronto.
+  // Próximos módulos (decisão do Carlos). Rótulo público: "Próximos módulos".
   roadmap: [
-    { name: "Document AI", text: "Leitura e organização de contratos, memoriais, planilhas e evidências." },
-    { name: "PMOC AI", text: "Plano de manutenção, operação e controle com equipamentos, cronograma e evidências." },
-    { name: "Agentes especialistas", text: "Copilotos internos com memória técnica para rotinas de engenharia e gestão." }
+    { id: "contratos-cm", name: "Gestão de Contratos de Construção e Montagem", sub: "Caldeiraria e Soldagem",
+      text: "Controle de contratos de construção e montagem industrial, da medição à rastreabilidade de soldagem e caldeiraria.",
+      tags: ["Medição", "Soldagem", "Caldeiraria"] },
+    { id: "crm", name: "CRM para a sua operação", sub: "Do lead à venda",
+      text: "Mapeamento completo do funil, da captação do lead até a venda, com integração por IA.",
+      tags: ["Funil completo", "Captação de leads", "Integração com IA"] },
+    { id: "agentes", name: "Agentes de IA para Gestão de Contratos", sub: "Copilotos especialistas",
+      text: "Agentes que leem contratos, cobram prazos e respondem dúvidas de gestão com memória técnica.",
+      tags: ["Contratos", "Prazos", "Memória técnica"] },
+    { id: "predial", name: "Gestão de Manutenção Predial", sub: "Rotinas automatizadas",
+      text: "Automação de rotinas de manutenção, relatórios automáticos, abertura e atendimento de chamados com visão CRM e monitoramento das agendas da equipe.",
+      tags: ["Chamados", "Rotinas", "Agenda da equipe", "Relatórios automáticos"] },
+    { id: "bi-ia", name: "Business Intelligence com IA", sub: "Foco em contratos",
+      text: "Indicadores de gestão de contratos na palma da mão, com integração com IA para explicar desvios e sugerir ação.",
+      tags: ["Indicadores", "Mobile", "IA"] }
   ],
 
   method: [

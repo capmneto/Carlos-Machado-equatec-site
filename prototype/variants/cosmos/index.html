@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equatec Hub · Constelação</title>
+<meta name="color-scheme" content="dark"><meta name="theme-color" content="#05061a">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<header class="top">
+  <a class="brand mono" href="#inicio">equatec<b>.hub</b></a>
+  <nav><a href="#sistemas">Sistemas</a><a href="#proximos">Próximos módulos</a><a href="#sobre">Sobre</a></nav>
+  <span class="cta"><a class="btn" href="/login">Login</a><a class="btn solid" href="/cadastro">Solicitar acesso</a></span>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="mono kicker">10 sistemas em produção · 5 a caminho</p>
+      <h1>Um universo de sistemas, <span>um só ponto de entrada.</span></h1>
+      <p class="lede">Do canteiro à diretoria: obras, ativos, segurança, qualidade e pessoas. Cada sistema é independente e conectado ao Hub. Gire o universo, toque numa estrela e entre.</p>
+      <p class="row"><a class="btn solid lg" href="#sistemas">Explorar os sistemas</a><a class="btn lg" href="/login">Entrar no Hub</a></p>
+    </div>
+    <div class="stage" id="stage" role="img" aria-label="Constelação interativa com os 10 sistemas. Arraste para girar, toque numa estrela para abrir.">
+      <p class="hint mono" id="hint">arraste para girar · clique numa estrela</p>
+    </div>
+  </section>
+
+  <section class="sec" id="sistemas" aria-labelledby="t1">
+    <header class="head"><h2 id="t1">Cada estrela é um sistema em produção.</h2><p>Passe o mouse num cartão e a estrela correspondente acende na constelação.</p></header>
+    <ul class="rail" id="rail"></ul>
+  </section>
+
+  <section class="sec" id="proximos" aria-labelledby="t2">
+    <header class="head"><h2 id="t2">Próximos módulos.</h2><p>Estrelas ainda apagadas: o que entra no ecossistema a seguir.</p></header>
+    <ol class="ghosts" id="ghosts"></ol>
+  </section>
+
+  <section class="sec about" id="sobre" aria-labelledby="t3">
+    <img src="../../assets/carlos-machado.jpg" width="640" height="640" alt="Carlos Machado, engenheiro mecânico e idealizador do ecossistema Equatec" loading="lazy">
+    <div>
+      <h2 id="t3">Quem desenhou este universo.</h2>
+      <p class="lede">Carlos Américo Pereira Machado Neto, engenheiro mecânico e engenheiro de segurança do trabalho, com mais de 12 anos em manutenção industrial, facilities e projetos de engenharia em ambientes de alta criticidade.</p>
+      <p>HVAC e PMOC, gestão de ativos, segurança, qualidade, indicadores, BI e inteligência artificial aplicada à gestão. Cada sistema nasceu de uma rotina real de campo.</p>
+      <p class="row"><a class="btn solid" href="https://wa.me/5522998578981">Conversar no WhatsApp</a><a class="btn" href="https://www.linkedin.com/in/carlos-machado-95917433/">LinkedIn</a></p>
+    </div>
+  </section>
+
+  <section class="sec final"><h2>Pronto para entrar no universo?</h2>
+    <p class="row"><a class="btn solid lg" href="/login">Entrar no Hub</a><a class="btn lg" href="/cadastro">Solicitar acesso</a></p></section>
+</main>
+<footer class="foot mono">equatec.hub · © 2026 Equatec Engenharia</footer>
+
+<dialog id="sheet" aria-labelledby="sh-t"><form method="dialog"><button class="x" aria-label="Fechar">×</button></form><div id="sh-body"></div></dialog>
+
+<script src="../../data/modules.js"></script><script src="../common.js"></script><script src="app.js"></script>
+</body></html>

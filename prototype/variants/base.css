@@ -1,0 +1,9 @@
+@font-face{font-family:"Space Grotesk";src:url(../assets/fonts/space-grotesk-latin-wght-normal.woff2) format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(../assets/fonts/jetbrains-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(../assets/fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:400 1.0625rem/1.6 "Space Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img,canvas,svg{display:block;max-width:100%}a{color:inherit}h1,h2,h3,p{margin:0}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}

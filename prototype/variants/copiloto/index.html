@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equatec Hub · Copiloto</title>
+<meta name="color-scheme" content="dark"><meta name="theme-color" content="#0a0a0c">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><a class="brand mono" href="#inicio">equatec<b>.hub</b></a>
+  <nav><a href="#sistemas">Sistemas</a><a href="#proximos">Próximos módulos</a><a href="#sobre">Sobre</a></nav>
+  <span class="cta"><a class="btn" href="/login">Login</a><a class="btn solid" href="/cadastro">Solicitar acesso</a></span></header>
+<main id="inicio">
+  <section class="hero">
+    <div class="glow" id="glow" aria-hidden="true"></div>
+    <p class="mono pill"><i></i>10 sistemas em produção</p>
+    <h1>O que você precisa resolver hoje na operação?</h1>
+    <form class="ask" id="ask" role="search" autocomplete="off">
+      <label class="sr-only" for="q">Descreva o que você precisa</label>
+      <input id="q" type="text" placeholder="Ex.: controlar horas e RDO da obra" maxlength="120">
+      <kbd class="mono" aria-hidden="true">Ctrl K</kbd>
+      <button class="go" aria-label="Perguntar">→</button>
+    </form>
+    <ul class="chips" id="chips" aria-label="Sugestões"></ul>
+    <div class="answer" id="answer" aria-live="polite"></div>
+    <p class="note mono">Busca guiada pelo conteúdo do Hub. Nada que você digita é enviado a serviço externo.</p>
+  </section>
+
+  <section class="sec" id="sistemas" aria-labelledby="t1">
+    <header class="head"><h2 id="t1">Os sistemas, do campo à gestão.</h2><p>Cada um com banco e acesso próprios. Toque para entrar.</p></header>
+    <div class="bento" id="bento"></div>
+  </section>
+
+  <section class="sec" id="proximos" aria-labelledby="t2">
+    <header class="head"><h2 id="t2">Próximos módulos.</h2><p>A camada de IA do ecossistema, na ordem em que entra em produção.</p></header>
+    <ol class="pipe" id="pipe"></ol>
+  </section>
+
+  <section class="sec" id="sobre" aria-labelledby="t3">
+    <h2 class="sr-only" id="t3">Sobre o idealizador</h2>
+    <div class="chat">
+      <p class="bubble q mono">Quem está por trás do Hub?</p>
+      <div class="bubble a"><img src="../../assets/carlos-machado.jpg" width="640" height="640" alt="Carlos Machado, engenheiro mecânico e idealizador do ecossistema Equatec" loading="lazy">
+        <div><p class="lede">Carlos Américo Pereira Machado Neto, engenheiro mecânico e engenheiro de segurança do trabalho, com mais de 12 anos em manutenção industrial, facilities e projetos de engenharia em ambientes de alta criticidade.</p>
+        <p>HVAC e PMOC, gestão de ativos, segurança, qualidade, indicadores, BI e IA aplicada à gestão. Os sistemas nasceram de rotinas que eu mesmo vivi em campo.</p>
+        <p class="row"><a class="btn solid" href="https://wa.me/5522998578981">Conversar no WhatsApp</a><a class="btn" href="https://www.linkedin.com/in/carlos-machado-95917433/">LinkedIn</a></p></div></div>
+    </div>
+  </section>
+  <section class="sec final"><h2>Pronto para sair da planilha?</h2><p class="row"><a class="btn solid lg" href="/login">Entrar no Hub</a><a class="btn lg" href="/cadastro">Solicitar acesso</a></p></section>
+</main>
+<footer class="foot mono">equatec.hub · © 2026 Equatec Engenharia</footer>
+<script src="../../data/modules.js"></script><script src="../common.js"></script><script src="app.js"></script>
+</body></html>
